@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li>
+                <span>差值表达式msg</span> <sapn>{{msg}}</sapn>
+            </li>
+            <li>
+                <span>指令v-text:</span> <sapn v-text="text"></sapn>
+            </li>
+            <li>
+                <span>双向绑定v-model:msg:</span> <input type="text" v-model="msg">
+            </li>
+            <li>
+               <div>v-html</div>
+               <div v-html="spanTem"></div>
+            </li>
+            <li>
+                <div>v-on</div>
+                <div v-on:click="clickHandle">111</div>
+            </li>
+        </ul>
+    </div>
+    <script src="./dep.js"></script>
+    <script src="./watcher.js"></script>
+    <script src="./compiler.js"></script>
+    <script src="./observer.js"></script>
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                age:{
+                    min:111
+                },
+                msg:"hello my vue",
+                text:"哈哈哈哈哈",
+                spanTem:"<h1>lucas vue</h1>"
+            },
+            method:{
+                clickHandle(){
+                    alert("点击事件")
+                }
+            }
+        })
+   
+    </script>
+</body>
+</html>
